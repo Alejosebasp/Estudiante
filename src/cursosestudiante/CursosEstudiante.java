@@ -101,10 +101,9 @@ public class CursosEstudiante {
                             + "tuvo un promdedio de "+promedio+" por lo tanto se encuentra en prueba academica.");
                         }
                         else{
-                            System.out.println("Felicidades, el estudiante"+ estudiante.obtenerNombre()+" "+estudiante.obtenerApellido()+ " tuvo un promedio de "
+                            System.out.println("Felicidades, el estudiante " + estudiante.obtenerNombre()+" "+estudiante.obtenerApellido()+ " tuvo un promedio de "
                             +promedio+" por lo tanto no esta en prueba academica.");
                         }
-                        
                     }
                     else System.out.println("Debe inscribir un estudiante y registrar las notas primero.");
                     break;

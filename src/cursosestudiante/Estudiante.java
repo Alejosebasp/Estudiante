@@ -17,6 +17,7 @@ public class Estudiante {
     private int cursosRegistrados=0;
     
     public void registrar(String nombre, String apellido, int codigo) {
+        curso = new Curso[5];
         this.nombre = nombre;
         this.apellido = apellido;
         this.codigo = codigo;
@@ -41,7 +42,7 @@ public class Estudiante {
             Curso c = this.curso[i];
             
             if (c.obtenerCodigo() == codigo){
-                System.out.println("Nombre: "+c.obtenerNombre());
+                System.out.println("El nombre del curso es: "+c.obtenerNombre());
                 i = this.cursosRegistrados+1;
             }
             i=i+1;
@@ -64,14 +65,16 @@ public class Estudiante {
     
     public double calcularPromedio(){
         double sumaNota=0;
+        int sumaCred=0;
         double promedio=0;
         
         for (int i=0; i<this.cursosRegistrados; i++){
             Curso c = this.curso[i];
+            sumaCred += c.obtenerCredito();
             sumaNota = sumaNota+(c.obtenerNota()*c.obtenerCredito());
         }
         
-        promedio = (sumaNota)/this.cursosRegistrados;
+        promedio = (sumaNota)/sumaCred;
                 
         return promedio;
     }
